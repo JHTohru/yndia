@@ -1,0 +1,104 @@
+@font-face {
+  font-family: 'Alternate Gothic No2';
+  src: url('fonts/ALTGOT2N.TTF');
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes bordertl {
+  0%, 100% { border-top-left-radius: 100%; }
+  25% { border-top-left-radius: 90%; }
+  50% { border-top-left-radius: 80%; }
+  75% { border-top-left-radius: 70%; }
+}
+
+@keyframes bordertr {
+  0%, 100% { border-top-right-radius: 100%; }
+  25% { border-top-right-radius: 90%; }
+  50% { border-top-right-radius: 100%; }
+  75% { border-top-right-radius: 70%; }
+}
+
+@keyframes borderbr {
+  0%, 100% { border-bottom-right-radius: 100%; }
+  25% { border-bottom-right-radius: 70%; }
+  50% { border-bottom-right-radius: 80%; }
+  75% { border-bottom-right-radius: 90%; }
+}
+
+@keyframes borderbl {
+  0%, 100% { border-bottom-left-radius: 100%; }
+  25% { border-bottom-left-radius: 90%; }
+  50% { border-bottom-left-radius: 80%; }
+  75% { border-bottom-left-radius: 70%; }
+}
+
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  transition: opacity 400ms ease;
+  background: #1f4656;
+  font-family: 'Alternate Gothic No2', sans-serif;
+  color: white;
+
+  .logo-wrapper, .feedback-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .logo-wrapper {
+    align-items: flex-end;
+  }
+
+  .feedback-wrapper {
+    align-items: center;
+  }
+
+  .logo {
+    height: 20vh;
+  }
+
+  .feedback {
+    position: relative;
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .percent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 1.2rem;
+    line-height: 2.8;
+  }
+
+  .bubble {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    box-shadow: inset 0 0 0 2px skyblue;
+    border-radius: 100px;
+    margin: 0 auto;
+    animation: 3s bordertl linear infinite,
+      4s bordertr linear infinite,
+      5.6s borderbl linear infinite,
+      3.3s borderbr linear infinite,
+      3.6s rotate linear infinite,
+      2s hover ease-in-out infinite;
+  }
+}
