@@ -1,0 +1,11 @@
+/*
+!.gitignore
+!/wp-content/
+
+/wp-content/*
+!/wp-content/plugins/
+/wp-content/plugins/akismet
+/wp-content/plugins/hello.php
+/wp-content/plugins/index.php
+!/wp-content/themes/yndia/
+!/wp-content/uploads/
