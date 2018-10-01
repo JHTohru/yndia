@@ -59,7 +59,7 @@ a {
     transition: opacity 300ms ease-in-out; }
     .page.light-box .box {
       padding: 10px;
-      background: #84a9af;
+      background: #1c4656;
       border-radius: 10px; }
     .page.light-box .nav-btn {
       --nav-btn-primary-color: #545454;
@@ -643,6 +643,9 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
   #manifesto .manifesto-text-content h6 {
     color: #1f4656;
     margin-bottom: 0; }
+  #manifesto .manifesto-text-content p {
+    font-size: 19px;
+    line-height: 1.3; }
   #manifesto .manifesto-text-content .scroll-auto {
     margin-top: 1.5rem;
     max-height: 60vh; }
@@ -706,9 +709,7 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
     padding: 35vh 15vw 0; } }
 
 #slow-carbonation h2 {
-  width: 32%;
-  margin: 2rem auto 0;
-  font-size: 1rem; }
+  font-size: 3rem; }
 #slow-carbonation .carousel-control {
   color: #1f4656; }
 
@@ -734,8 +735,7 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
   --carbonation-factory-width: 70vh;
   position: relative;
   width: var(--carbonation-factory-width);
-  height: calc(var(--carbonation-factory-width) * .54);
-  margin: 0 auto; }
+  height: calc(var(--carbonation-factory-width) * .54); }
   #slow-carbonation-factory .factory-part {
     position: absolute;
     opacity: .5; }
@@ -811,24 +811,13 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
   background-size: 100% 99.1%; }
 
 #slow-carbonation-info {
-  position: absolute;
-  right: 10%;
-  top: 34%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 13%;
-  height: 37.8vh;
-  font-size: .8rem; }
+  font-size: .8rem;
+  padding-bottom: 12vh; }
   #slow-carbonation-info, #slow-carbonation-info h4 {
     text-align: left; }
   #slow-carbonation-info h4 {
     font-size: .9rem;
     color: #1f4656; }
-  @media (min-width: 1200px) {
-    #slow-carbonation-info {
-      right: 15%;
-      width: 14%; } }
 
 #cocktail-info {
   height: 40vh; }
@@ -947,7 +936,7 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
         width: 100%;
         max-height: 32vh;
         overflow-y: auto;
-        margin-bottom: 20vh; }
+        margin-bottom: 27vh; }
         #the-bottle .content, #the-bottle .content h4 {
           text-align: left; } }
   #the-bottle .bottle {
@@ -987,8 +976,8 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
         text-align: right; }
       #the-bottle .bottle .label-element-link.the-river {
         right: 10%;
-        bottom: 13%;
-        width: 40%;
+        bottom: 18%;
+        width: 27.5%;
         text-align: right; }
       @media (min-width: 768px) {
         #the-bottle .bottle .label-element-link {
@@ -1340,6 +1329,9 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
     background: #1f8394; }
   .desktop-menu.the-bottle-menu .languages-menu .nav-item, #find-us .desktop-menu .languages-menu .nav-item {
     border-color: white; }
+
+#navigation-tutorial .navigation-tutorial-text {
+  font-size: 1.3em; }
 
 /*
 .pace {

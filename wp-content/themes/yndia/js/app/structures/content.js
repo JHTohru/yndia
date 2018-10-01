@@ -39,15 +39,15 @@ define(['require', 'jquery', 'ejs', 'structures/desktop-menu', 'i18n/i18n'], (re
         <!-- The Bottle -->
         <section id="navigation-tutorial" class="light-box page d-none">
             <div class="box row">
-                <div class="col-2 d-flex justify-content-center align-items-center">
+                <div class="col-auto d-flex justify-content-center align-items-center">
                     <a class="nav-btn left">
                         <i class="fa fa-chevron-left" aria-hidden="true"></i>
                     </a>
                 </div>
-                <div class="col-8 d-flex justify-content-center align-items-center text-uppercase">
+                <div class="col d-flex justify-content-center align-items-center text-uppercase text-white navigation-tutorial-text">
                     <%- tutorialText %>
                 </div>
-                <div class="col-2 d-flex justify-content-center align-items-center">
+                <div class="col-auto d-flex justify-content-center align-items-center">
                     <a class="nav-btn right">
                         <i class="fa fa-chevron-right" aria-hidden="true"></i>
                     </a>

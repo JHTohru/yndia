@@ -39,25 +39,33 @@ define(['require', 'jquery', 'ejs', 'data/carbonation-elements', 'common/utils']
                         </a>
                         <% } %>
                     </div>
-                    <div class="d-none d-md-block">
-                        <div id="slow-carbonation-factory" class="d-none d-md-block">
-                            <a id="snail" class="factory-part active"></a>
-                            <a id="hand" class="factory-part"></a>
-                            <a id="balloon" class="factory-part"></a>
-                            <div id="bubbles" class="factory-part"></div>
-                            <a id="accordion-fish" class="factory-part"></a>
-                            <div id="pipes" class="factory-part"></div>
+                    <div class="row no-gutters d-none d-md-flex h-100">
+                        <div class="col-3">
+                            <h2 class="text-left">
+                                <span>Carbo&#8203;natação Lenta</span>
+                            </h2>
                         </div>
-                        <h2 class="framed-title">
-                            <span class="framed-title-inner d-flex align-items-center justify-content-center">Carbonatação Lenta</span>
-                        </h2>
-                        <div id="slow-carbonation-info">
-                            <% if (carbonationElements.length) { %>
-                            <div class="slow-carbonation-info-wrapper">
-                                <h4 class="title"><%- activeCarbonationElement.title %></h4>
-                                <div class="text-content"><%- activeCarbonationElement.content %></div>
+
+                        <div class="col-7">
+                            <div id="slow-carbonation-factory">
+                                <a id="snail" class="factory-part active"></a>
+                                <a id="hand" class="factory-part"></a>
+                                <a id="balloon" class="factory-part"></a>
+                                <div id="bubbles" class="factory-part"></div>
+                                <a id="accordion-fish" class="factory-part"></a>
+                                <div id="pipes" class="factory-part"></div>
+                            </div>                        
+                        </div>
+
+                        <div class="col-2 align-self-end">
+                            <div id="slow-carbonation-info">
+                                <% if (carbonationElements.length) { %>
+                                <div class="slow-carbonation-info-wrapper">
+                                    <h4 class="title"><%- activeCarbonationElement.title %></h4>
+                                    <div class="text-content"><%- activeCarbonationElement.content %></div>
+                                </div>
+                                <% } %>
                             </div>
-                            <% } %>
                         </div>
                     </div>
                 </div>
