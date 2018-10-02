@@ -366,7 +366,7 @@ define(['require', 'jquery', 'plugins/sea-flow', 'ejs', 'data/bottle-labels', 'd
                             <% }); %>
                         </ul>
                     </div>
-                    <div class="content scroll-auto mx-auto">
+                    <div class="content scroll-auto mx-auto the-bottle-label-content">
                         <% bottleLabels.forEach((label) => { %>
                         <div class="<%- label.id %>-label">
                             <h4><%- label.contentTitle %></h4>
