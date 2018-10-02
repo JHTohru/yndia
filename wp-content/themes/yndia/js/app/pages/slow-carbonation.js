@@ -44,20 +44,20 @@ define(['require', 'jquery', 'ejs', 'data/carbonation-elements', 'common/utils']
                             <div
                             class="mx-auto"
                             id="slow-carbonation-factory">
-                                <a id="snail" class="factory-part active"></a>
+                                <a id="snail" class="factory-part"></a>
                                 <a id="hand" class="factory-part"></a>
                                 <a id="balloon" class="factory-part"></a>
                                 <div id="bubbles" class="factory-part"></div>
-                                <a id="accordion-fish" class="factory-part"></a>
+                                <a id="accordion-fish" class="factory-part active"></a>
                                 <div id="pipes" class="factory-part"></div>
                             </div>                        
                         </div>
 
                         <div class="col-3">
+                            <h2 class="text-left mb-3 mb-xl-4">
+                                <span>Carbo&#8203;natação Lenta</span>
+                            </h2>
                             <div id="slow-carbonation-info">
-                                <h2 class="text-left mb-3 mb-xl-4">
-                                    <span>Carbo&#8203;natação Lenta</span>
-                                </h2>
                                 <% if (carbonationElements.length) { %>
                                 <div class="slow-carbonation-info-wrapper">
                                     <h4 class="title"><%- activeCarbonationElement.title %></h4>

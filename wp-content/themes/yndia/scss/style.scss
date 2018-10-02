@@ -1086,14 +1086,40 @@ main {
 
   @include media-md {
     &.page {
-      padding: 35vh 15vw 0;
+      padding: 30vh 15vw 0;
     }
   }
 }
 
 #slow-carbonation {
+  h2 {
+    color: #1c4955;
+
+    @include media-md {
+      font-size: 1.6rem;
+    }
+
+    @include media-xxl {
+      font-size: 2rem;
+    }
+
+    @include media-xxxl {
+      font-size: 3rem;
+    }
+  }
+
   .carousel-control {
     color: $darkBlue;
+  }
+
+  h2, #slow-carbonation-info {
+    @include media-lg {
+      padding-left: 1rem;
+    }
+
+    @include media-xl {
+      padding-left: 0;
+    }
   }
 }
 
@@ -1252,22 +1278,6 @@ $slowCarbAnimationPath: '#{$imagesPath}/slow-carbonation-animation';
     padding-left: 0;
   }
 
-  h2 {
-    color: #1c4955;
-
-    @include media-md {
-      font-size: 1.6rem;
-    }
-
-    @include media-xxl {
-      font-size: 2rem;
-    }
-
-    @include media-xxxl {
-      font-size: 3rem;
-    }
-  }
-
   &, h4 {
     text-align: left;
   }
@@ -1364,6 +1374,7 @@ $slowCarbAnimationPath: '#{$imagesPath}/slow-carbonation-animation';
     width: auto;
     height: 80%;
     max-height: 36vh;
+    padding-top: 5vh;
     transition: transform ease-in-out 200ms;
   }
 

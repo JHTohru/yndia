@@ -82,14 +82,17 @@ define(['require', 'jquery', 'ejs', 'data/cocktails', 'common/utils'], (require)
 
         let activeCocktailIndex;
 
-        adjust$cocktailImageBGPosY = (imgHeight) => {
-            $cocktailImage
-                .css({
-                    backgroundPositionY() {
-                        return `${imgHeight * .75}px`;
-                    }
-                })
-        };
+        adjust$cocktailImageBGPosY = $image => $cocktailImage.css({
+            backgroundPositionY() {
+                const height = $image.height() * .75
+                    + parseInt($image.css('margin-bottom'))
+                    + parseInt($image.css('margin-top'))
+                    + parseInt($image.css('padding-top'))
+                    + parseInt($image.css('padding-bottom'));
+
+                return `${height}px`;
+            },
+        });
 
         $cocktailsPage
             .find('#cocktails-carousel')
@@ -115,7 +118,7 @@ define(['require', 'jquery', 'ejs', 'data/cocktails', 'common/utils'], (require)
                             transform: '',
                         });
 
-                        adjust$cocktailImageBGPosY($newCocktailImage.height());
+                        adjust$cocktailImageBGPosY($newCocktailImage);
 
                         $(this).remove();
                     },
@@ -145,10 +148,8 @@ define(['require', 'jquery', 'ejs', 'data/cocktails', 'common/utils'], (require)
             .on({
                 load() {
                     const interval = setInterval(() => {
-                        const imgHeight = $(this).height();
-
-                        if (imgHeight) {
-                            adjust$cocktailImageBGPosY(imgHeight);
+                        if ($(this).height()) {
+                            adjust$cocktailImageBGPosY($(this));
 
                             clearInterval(interval);
                         }
@@ -157,7 +158,7 @@ define(['require', 'jquery', 'ejs', 'data/cocktails', 'common/utils'], (require)
             });
 
         $(window)
-            .on('resize', () => adjust$cocktailImageBGPosY($cocktailsPage.find('#cocktail-image img').height()));
+            .on('resize', () => adjust$cocktailImageBGPosY($cocktailsPage.find('#cocktail-image img')));
 
         return $cocktailsPage[0];
     }
@@ -169,7 +170,7 @@ define(['require', 'jquery', 'ejs', 'data/cocktails', 'common/utils'], (require)
     function turnOn() {
         $cocktailsPage.children('.page-container').show();
 
-        adjust$cocktailImageBGPosY($cocktailsPage.find('#cocktail-image img').height());
+        adjust$cocktailImageBGPosY($cocktailsPage.find('#cocktail-image img'));
     }
 
     return {
