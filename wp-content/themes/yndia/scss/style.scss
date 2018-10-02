@@ -51,6 +51,10 @@ $imagesPath: './../images';
   @media (min-width: 1600px) { @content; }
 }
 
+@mixin media-xxxl {
+  @media (min-width: 1920px) { @content; }
+}
+
 $mainFontFamily: 'Alternate Gothic No2', sans-serif;
 $titleFontFamily: 'Aka Posse', sans-serif;
 $menuFontFamily: 'Flama Condensed', sans-serif;
@@ -1240,10 +1244,26 @@ $slowCarbAnimationPath: '#{$imagesPath}/slow-carbonation-animation';
 }
 
 #slow-carbonation-info {
+  @include media-lg {
+    padding-left: 1em;
+  }
+
+  @include media-xl {
+    padding-left: 0;
+  }
+
   h2 {
     color: #1c4955;
 
+    @include media-md {
+      font-size: 1.6rem;
+    }
+
     @include media-xxl {
+      font-size: 2rem;
+    }
+
+    @include media-xxxl {
       font-size: 3rem;
     }
   }
@@ -1254,10 +1274,30 @@ $slowCarbAnimationPath: '#{$imagesPath}/slow-carbonation-animation';
 
   h4 {
     color: $darkBlue;
-    font-size: 1rem;
+    font-size: .8rem;
+
+    @include media-xl {
+      font-size: 1rem;
+    }
 
     @include media-xxl {
       font-size: 1.2rem;
+    }
+  }
+
+  .text-content {
+    font-size: .8rem;
+
+    @include media-lg {
+      font-size: .9rem;
+    }
+
+    @include media-xl {
+      font-size: 1rem;
+    }
+
+    p:last-of-type {
+      margin-bottom: 0;
     }
   }
 

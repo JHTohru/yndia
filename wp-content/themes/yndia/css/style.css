@@ -810,19 +810,44 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
   background: url("./../images/slow-carbonation/pipes.png") no-repeat center;
   background-size: 100% 99.1%; }
 
+@media (min-width: 992px) {
+  #slow-carbonation-info {
+    padding-left: 1em; } }
+@media (min-width: 1200px) {
+  #slow-carbonation-info {
+    padding-left: 0; } }
 #slow-carbonation-info h2 {
   color: #1c4955; }
+  @media (min-width: 768px) {
+    #slow-carbonation-info h2 {
+      font-size: 1.6rem; } }
   @media (min-width: 1600px) {
+    #slow-carbonation-info h2 {
+      font-size: 2rem; } }
+  @media (min-width: 1920px) {
     #slow-carbonation-info h2 {
       font-size: 3rem; } }
 #slow-carbonation-info, #slow-carbonation-info h4 {
   text-align: left; }
 #slow-carbonation-info h4 {
   color: #1f4656;
-  font-size: 1rem; }
+  font-size: .8rem; }
+  @media (min-width: 1200px) {
+    #slow-carbonation-info h4 {
+      font-size: 1rem; } }
   @media (min-width: 1600px) {
     #slow-carbonation-info h4 {
       font-size: 1.2rem; } }
+#slow-carbonation-info .text-content {
+  font-size: .8rem; }
+  @media (min-width: 992px) {
+    #slow-carbonation-info .text-content {
+      font-size: .9rem; } }
+  @media (min-width: 1200px) {
+    #slow-carbonation-info .text-content {
+      font-size: 1rem; } }
+  #slow-carbonation-info .text-content p:last-of-type {
+    margin-bottom: 0; }
 @media (min-width: 1600px) {
   #slow-carbonation-info .slow-carbonation-info-wrapper {
     padding-right: 20%; } }
