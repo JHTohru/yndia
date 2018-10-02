@@ -66,6 +66,12 @@
 
   .logo {
     height: 20vh;
+
+    @media (min-width: 768px) { // media-md
+      height: auto;
+      max-width: 337.5px;
+      width: 22.5vw;
+    }
   }
 
   .feedback {

@@ -40,14 +40,10 @@ define(['require', 'jquery', 'ejs', 'data/carbonation-elements', 'common/utils']
                         <% } %>
                     </div>
                     <div class="row no-gutters d-none d-md-flex h-100">
-                        <div class="col-3">
-                            <h2 class="text-left">
-                                <span>Carbo&#8203;natação Lenta</span>
-                            </h2>
-                        </div>
-
-                        <div class="col-7">
-                            <div id="slow-carbonation-factory">
+                        <div class="col-9 text-center">
+                            <div
+                            class="mx-auto"
+                            id="slow-carbonation-factory">
                                 <a id="snail" class="factory-part active"></a>
                                 <a id="hand" class="factory-part"></a>
                                 <a id="balloon" class="factory-part"></a>
@@ -57,8 +53,11 @@ define(['require', 'jquery', 'ejs', 'data/carbonation-elements', 'common/utils']
                             </div>                        
                         </div>
 
-                        <div class="col-2 align-self-end">
+                        <div class="col-3">
                             <div id="slow-carbonation-info">
+                                <h2 class="text-left mb-3 mb-xl-4">
+                                    <span>Carbo&#8203;natação Lenta</span>
+                                </h2>
                                 <% if (carbonationElements.length) { %>
                                 <div class="slow-carbonation-info-wrapper">
                                     <h4 class="title"><%- activeCarbonationElement.title %></h4>
