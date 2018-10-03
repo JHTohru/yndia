@@ -970,7 +970,7 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
     --nav-btn-secondary-color: #e8e8e8;
     position: absolute;
     left: calc(50vw - var(--nav-btn-size) / 2);
-    bottom: 67vh;
+    bottom: 70vh;
     z-index: 100;
     display: none; }
     @media (min-width: 768px) {
@@ -1042,7 +1042,8 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
           display: block; } }
     @media (min-width: 768px) {
       #the-bottle .bottle {
-        height: 64vh;
+        height: 70vh;
+        margin-bottom: -2vh;
         padding: 0; } }
   #the-bottle .sea {
     top: -7%;
