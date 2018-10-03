@@ -1013,12 +1013,6 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
       position: relative;
       width: 100%;
       height: 90%; }
-      @media (min-width: 768px) {
-        #the-bottle .bottle .bottle-wrapper {
-          margin-bottom: 2rem; } }
-      @media (min-width: 1600px) {
-        #the-bottle .bottle .bottle-wrapper {
-          margin-bottom: 3rem; } }
     #the-bottle .bottle .label-element-link {
       position: absolute;
       display: none;
@@ -1030,18 +1024,18 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
         text-decoration: none; }
       #the-bottle .bottle .label-element-link.the-arrow {
         left: 10%;
-        bottom: 35%;
+        bottom: 40%;
         width: 39%;
         text-align: left; }
       #the-bottle .bottle .label-element-link.the-clouds {
         right: 10%;
-        bottom: 33.6%;
-        width: 32%;
+        bottom: 36%;
+        width: 30%;
         text-align: right; }
       #the-bottle .bottle .label-element-link.the-river {
         right: 10%;
-        bottom: 18%;
-        width: 27.5%;
+        bottom: 28%;
+        width: 23%;
         text-align: right; }
       @media (min-width: 768px) {
         #the-bottle .bottle .label-element-link {
@@ -1088,14 +1082,6 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
     body.extra-dry-label #the-bottle .bottle .label-element-link {
       color: #545454;
       border-bottom-color: #545454; }
-      body.extra-dry-label #the-bottle .bottle .label-element-link.the-arrow {
-        bottom: 44.5%; }
-      body.extra-dry-label #the-bottle .bottle .label-element-link.the-clouds {
-        bottom: 44%; }
-      body.extra-dry-label #the-bottle .bottle .label-element-link.the-river {
-        bottom: 21%;
-        width: 50%;
-        text-align: right; }
     body.extra-dry-label #the-bottle .bottle img.classic-label {
       display: none; }
     body.extra-dry-label #the-bottle .bottle img.extra-dry-label {

@@ -378,7 +378,7 @@ define(['require', 'jquery', 'plugins/sea-flow', 'ejs', 'data/bottle-labels', 'd
                 <% } %>
                 <% if (bottleLabels.length) { %>
                 <div class="bottle col-12 col-md-4 position-relative">
-                    <div class="bottle-wrapper">
+                    <div class="bottle-wrapper d-flex justify-content-center">
                         <% if (labelElements.length) { labelElements.forEach((labelElement) => { %>
                         <a href="#<%- labelElement.id %>" data-label-element-id="<%- labelElement.id %>" class="label-element-link <%- labelElement.id %>">
                             <%- labelElement.title %>

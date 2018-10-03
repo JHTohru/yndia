@@ -1540,14 +1540,6 @@ $slowCarbAnimationPath: '#{$imagesPath}/slow-carbonation-animation';
       position: relative;
       width: 100%;
       height: 90%;
-
-      @include media-md {
-        margin-bottom: 2rem;
-      }
-
-      @include media-xxl {
-        margin-bottom: 3rem;
-      }
     }
 
     .label-element-link {
@@ -1564,22 +1556,22 @@ $slowCarbAnimationPath: '#{$imagesPath}/slow-carbonation-animation';
 
       &.the-arrow {
         left: 10%;
-        bottom: 35%;
+        bottom: 40%;
         width: 39%;
         text-align: left;
       }
 
       &.the-clouds {
         right: 10%;
-        bottom: 33.6%;
-        width: 32%;
+        bottom: 36%;
+        width: 30%;
         text-align: right;
       }
 
       &.the-river {
         right: 10%;
-        bottom: 18%;
-        width: 27.5%;
+        bottom: 28%;
+        width: 23%;
         text-align: right;
       }
 
@@ -1672,20 +1664,6 @@ $slowCarbAnimationPath: '#{$imagesPath}/slow-carbonation-animation';
       .label-element-link {
         color: $darkerGray;
         border-bottom-color: $darkerGray;
-
-        &.the-arrow {
-          bottom: 44.5%;
-        }
-
-        &.the-clouds {
-          bottom: 44%;
-        }
-
-        &.the-river {
-          bottom: 21%;
-          width: 50%;
-          text-align: right;
-        }
       }
 
       img.classic-label {
