@@ -2149,13 +2149,17 @@ $slowCarbAnimationPath: '#{$imagesPath}/slow-carbonation-animation';
 #try-extra-dry {
   cursor: pointer;
   position: absolute;
-  right: -14rem;
+  right: -14.7rem;
   top: 24vh;
   transition: transform ease-in-out 200ms;
   z-index: 110;
 
+  body.active-page-the-bottle.extra-dry-label & {
+    display: none !important;
+  }
+
   @include media-xl {
-    right: -13rem;
+    right: -14.6rem;
   }
 
   &.expanded, &:hover {

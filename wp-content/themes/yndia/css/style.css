@@ -1435,13 +1435,15 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
 #try-extra-dry {
   cursor: pointer;
   position: absolute;
-  right: -14rem;
+  right: -14.7rem;
   top: 24vh;
   transition: transform ease-in-out 200ms;
   z-index: 110; }
+  body.active-page-the-bottle.extra-dry-label #try-extra-dry {
+    display: none !important; }
   @media (min-width: 1200px) {
     #try-extra-dry {
-      right: -13rem; } }
+      right: -14.6rem; } }
   #try-extra-dry.expanded, #try-extra-dry:hover {
     transform: translateX(-14rem); }
   #try-extra-dry .content {

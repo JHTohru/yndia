@@ -4,26 +4,26 @@ define(['require', 'jquery', 'ejs', 'structures/desktop-menu', 'i18n/i18n'], (re
 
     const contentTemplate = `
     <main class="p-0" role="main">
+        <div
+        class="d-none d-md-block"
+        id="try-extra-dry">
+            <div class="content row no-gutters py-2 pl-3">
+                <div class="col-auto mr-3">
+                    <h2 class="text-left m-0"><%- tryExtraDryTitle %></h2>
+                </div>
+
+                <div class="col-auto">
+                    <p class="m-0 text-white text-left"><%- tryExtraDryText %></p>
+                </div>
+            </div>
+        
+            <img
+            class="extra-dry-bottle"
+            src="<%- img('try-extra-dry-min.png') %>">
+        </div>
         <!-- Home -->
         <!-- Find Us -->
         <div class="row no-gutters" id="frame">
-            <div
-            class="d-none d-md-block"
-            id="try-extra-dry">
-                <div class="content row no-gutters py-2 pl-3">
-                    <div class="col-auto mr-3">
-                        <h2 class="text-left m-0"><%- tryExtraDryTitle %></h2>
-                    </div>
-                    <div class="col-auto">
-                        <p class="m-0 text-white text-left"><%- tryExtraDryText %></p>
-                    </div>
-                </div>
-            
-                <img
-                class="extra-dry-bottle"
-                src="<%- img('try-extra-dry-min.png') %>">
-            </div>
-
             <div class="frame-part top d-none d-md-block"></div>
             <div class="frame-part right d-none d-md-block"></div>
             <div class="frame-part bottom d-none d-md-block"></div>
