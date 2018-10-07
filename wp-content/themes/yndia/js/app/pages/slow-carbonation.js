@@ -18,7 +18,7 @@ define(['require', 'jquery', 'ejs', 'data/carbonation-elements', 'common/utils']
                                 <div class="slow-carbonation-element carousel-item <%- index === 0 ? 'active' : '' %>">
                                     <div class="row no-gutters">
                                         <div class="slow-carbonation-element-image col-12">
-                                            <img src="<%- loadIMG(carbonationElement.image) %>">
+                                            <div id="mobile-<%- carbonationElement.id %>"></div>
                                         </div>
                                         <div class="slow-carbonation-element-text col-12">
                                             <h4 class="title"><%- carbonationElement.title %></h4>

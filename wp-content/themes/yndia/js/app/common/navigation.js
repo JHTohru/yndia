@@ -210,6 +210,7 @@ define([
 
                     if (!isMobile()) {
                         const $navigationTutorial = $('#navigation-tutorial');
+                        const $tryExtraDry = $('#try-extra-dry');
 
                         settingTransition.add((next) => {
                             $navigationTutorial.removeClass('d-none');
@@ -231,6 +232,18 @@ define([
 
                         finalStage.add((next) => {
                             $navigationTutorial.remove();
+
+                            return next();
+                        });
+
+                        finalStage.add((next) => {
+                            $tryExtraDry.addClass('expanded');
+
+                            return setTimeout(() => next(), 2000);
+                        });
+
+                        finalStage.add((next) => {
+                            $tryExtraDry.removeClass('expanded');
 
                             return next();
                         });
@@ -687,6 +700,16 @@ define([
         goToURL('#home');
 
         $('body').addClass(`current-language-${currentLanguage}`);
+
+        // try-extra-dry
+
+        $('#try-extra-dry').on('click', () => {
+            console.log('a');
+
+            $('body').addClass('extra-dry-label');
+
+            return goToURL('#the-bottle');
+        });
     }
 
     $(window).on({

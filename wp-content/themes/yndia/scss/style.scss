@@ -1011,7 +1011,7 @@ main {
       }
 
       .scroll-auto {
-        max-height: 40vh;
+        max-height: 30vh;
       }
     }
   }
@@ -1138,14 +1138,7 @@ main {
   }
 
   .slow-carbonation-element-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 45vh;
-
-    img {
-      max-height: 100%;
-    }
   }
 
   .slow-carbonation-element-text {
@@ -1191,7 +1184,8 @@ $slowCarbAnimationPath: '#{$imagesPath}/slow-carbonation-animation';
   }
 }
 
-#hand, #accordion-fish {
+#hand, #accordion-fish,
+#mobile-hand, #mobile-accordion-fish {
   animation: slowCarbonationAnimation 1.5s steps(24) infinite;
   background-color: transparent;
   background-position: 2400% 50%;
@@ -1199,7 +1193,8 @@ $slowCarbAnimationPath: '#{$imagesPath}/slow-carbonation-animation';
   background-size: 2400% auto;
 }
 
-#balloon, #snail {
+#balloon, #snail,
+#mobile-balloon, #mobile-snail {
   animation: slowCarbonationAnimation 3s steps(48) infinite;
   background-color: transparent;
   background-position: 4800% 50%;
@@ -1211,8 +1206,24 @@ $slowCarbAnimationPath: '#{$imagesPath}/slow-carbonation-animation';
   100% { background-position-x: 0 }
 }
 
-#snail {
+#snail, #mobile-snail {
   background-image: url('#{$slowCarbAnimationPath}/snail-animation-filmstrip-min.png');
+}
+
+#hand, #mobile-hand {
+  animation-direction: alternate;
+  background-image: url('#{$slowCarbAnimationPath}/oil-bottle-animation-filmstrip-min.png');
+}
+
+#balloon, #mobile-balloon {
+  background-image: url('#{$slowCarbAnimationPath}/balloon-animation-filmstrip-min.png');
+}
+
+#accordion-fish, #mobile-accordion-fish {
+  background-image: url('#{$slowCarbAnimationPath}/hand-fish-animation-filmstrip-min.png');
+}
+
+#snail {
   height: 92%;
   left: -7%;
   top: -42%;
@@ -1220,8 +1231,6 @@ $slowCarbAnimationPath: '#{$imagesPath}/slow-carbonation-animation';
 }
 
 #hand {
-  animation-direction: alternate;
-  background-image: url('#{$slowCarbAnimationPath}/oil-bottle-animation-filmstrip-min.png');
   height: 50%;
   left: 16%;
   top: -24.4%;
@@ -1229,7 +1238,6 @@ $slowCarbAnimationPath: '#{$imagesPath}/slow-carbonation-animation';
 }
 
 #balloon {
-  background-image: url('#{$slowCarbAnimationPath}/balloon-animation-filmstrip-min.png');
   height: 84%;
   left: 49.5%;
   top: -27.3%;
@@ -1237,12 +1245,33 @@ $slowCarbAnimationPath: '#{$imagesPath}/slow-carbonation-animation';
 }
 
 #accordion-fish {
-  background-image: url('#{$slowCarbAnimationPath}/hand-fish-animation-filmstrip-min.png');
   height: 48%;
   left: -14%;
   top: 40%;
   width: 70.1vh;
 }
+
+#mobile-hand, #mobile-balloon, #mobile-snail, #mobile-accordion-fish {
+  height: 100%;
+  margin: 0 auto;
+}
+
+#mobile-hand {
+  width: 100%;
+}
+
+#mobile-balloon {
+  width: 46%;
+}
+
+#mobile-snail {
+  width: 66%;
+}
+
+#mobile-accordion-fish {
+  width: 161%;
+}
+
 
 #bubbles {
   right: 9.5%;
@@ -1293,11 +1322,11 @@ $slowCarbAnimationPath: '#{$imagesPath}/slow-carbonation-animation';
     font-size: .8rem;
 
     @include media-lg {
-      font-size: .9rem;
+      font-size: 17px;
     }
 
-    @include media-xl {
-      font-size: 1rem;
+    @include media-xxl {
+      font-size: 19px;
     }
 
     p:last-of-type {
@@ -1513,8 +1542,8 @@ $slowCarbAnimationPath: '#{$imagesPath}/slow-carbonation-animation';
     }
 
     @include media-md {
-      margin-bottom: 27vh;
-      max-height: 32vh;
+      margin-bottom: 23vh;
+      max-height: 26vh;
       overflow-y: auto;
       width: 100%;
 
@@ -1528,7 +1557,7 @@ $slowCarbAnimationPath: '#{$imagesPath}/slow-carbonation-animation';
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    height: 70vh;
+    height: 65vh;
     overflow: hidden;
     padding-bottom: 1rem;
 
@@ -1555,23 +1584,23 @@ $slowCarbAnimationPath: '#{$imagesPath}/slow-carbonation-animation';
       }
 
       &.the-arrow {
-        left: 10%;
+        left: 5%;
         bottom: 40%;
-        width: 39%;
+        width: 44%;
         text-align: left;
       }
 
       &.the-clouds {
-        right: 10%;
-        bottom: 36%;
-        width: 30%;
+        bottom: 35%;
+        right: 5%;
+        width: 34%;
         text-align: right;
       }
 
       &.the-river {
-        right: 10%;
-        bottom: 28%;
-        width: 23%;
+        bottom: 23%;
+        right: 5%;
+        width: 44%;
         text-align: right;
       }
 
@@ -1581,13 +1610,8 @@ $slowCarbAnimationPath: '#{$imagesPath}/slow-carbonation-animation';
     }
 
     @include media-md {
-      height: 70vh;
-      margin-bottom: -2vh;
+      margin-bottom: -10px ;
       padding: 0;
-    }
-
-    @include media-xl {
-
     }
   }
 
@@ -1797,9 +1821,23 @@ $slowCarbAnimationPath: '#{$imagesPath}/slow-carbonation-animation';
 }
 
 #desktop-label-elements {
-  height: 54vh;
   color: white;
+  height: 60vh;
   text-align: left;
+
+  @include media-xxl {
+    height: 54vh;
+
+    .label-element-figures, .label-element-text-content {
+      flex-basis: 50%;
+      max-width: 50%;
+      width: 50%;
+    }
+
+    .label-element-text-content {
+      padding-left: 1rem;
+    }
+  }
 
   h6 {
     font-size: 1.5rem;
@@ -1810,14 +1848,37 @@ $slowCarbAnimationPath: '#{$imagesPath}/slow-carbonation-animation';
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 10vw;
-    height: 10vw;
-    background-color: $mediumBlue;
+    width: 65%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('#{$imagesPath}/the-bottle-element-classic-bg.svg');
+    margin-bottom: 10px;
+    min-height: 88px;
+
     transition: transform ease-in 200ms;
 
     img {
-      max-width: 85%;
-      max-height: 85%;
+      max-width: 65%;
+      max-height: 65%;
+    }
+
+    @include media-lg {
+      min-height: 136px;
+    }
+
+    @include media-xl {
+      min-height: 170px;
+    }
+
+    @include media-xxl {
+      margin: 0;
+      width: 100%;
+
+      img {
+        max-width: 75%;
+        max-height: 75%;
+      }
     }
   }
 
@@ -1839,7 +1900,7 @@ $slowCarbAnimationPath: '#{$imagesPath}/slow-carbonation-animation';
     }
 
     figure {
-      background-color: $darkerGray;
+      background-image: url('#{$imagesPath}/the-bottle-element-extra-dry-bg.svg');
     }
 
     .blowing-bubble {
@@ -1883,6 +1944,10 @@ $slowCarbAnimationPath: '#{$imagesPath}/slow-carbonation-animation';
 
   .languages-menu, .social-menu {
     padding-top: 4vh;
+
+    a {
+      line-height: 1;
+    }
   }
 
   .languages-menu {
@@ -2078,6 +2143,54 @@ $slowCarbAnimationPath: '#{$imagesPath}/slow-carbonation-animation';
 #navigation-tutorial {
   .navigation-tutorial-text {
     font-size: 1.3em;
+  }
+}
+
+#try-extra-dry {
+  cursor: pointer;
+  position: absolute;
+  right: -14rem;
+  top: 24vh;
+  transition: transform ease-in-out 200ms;
+  z-index: 110;
+
+  @include media-xl {
+    right: -13rem;
+  }
+
+  &.expanded, &:hover {
+    transform: translateX(-14rem);
+  }
+
+  .content {
+    background: #bb8b36;
+    border-radius: 8px 0 0 8px;
+    padding-right: 6.6rem;
+
+    h2 {
+      font-size: 1.3rem;
+      line-height: 1.25;
+
+      a {
+        color: #1c4955;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    p {
+      font-family: $menuFontFamily;
+      line-height: 1.1;
+    }
+  }
+
+  .extra-dry-bottle {
+    position: absolute;
+    right: -0.6rem;
+    top: -3.7rem;
+    width: 8.8rem;
   }
 }
 

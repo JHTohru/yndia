@@ -9,17 +9,37 @@ define(['require', 'jquery', 'ejs', 'data/main-menu-desktop', 'data/social-menu'
         const desktopNavigationTemplate = `
         <nav class="desktop-menu navbar w-100 p-0 text-uppercase text-center">
             <div class="row no-gutters w-100">
-                <% if (languagesMenu.length) { %>
-                <ul class="languages-menu col-1 offset-1 nav justify-content-center align-items-start">
-                    <% languagesMenu.forEach((lang) => { %>
-                    <li class="nav-item px-2">
-                        <a class="nav-link p-0" href="<%- lang.url %>" title="<%- lang.name %>"><%- lang.slug %></a>
-                    </li>
-                    <% }); %>
-                </ul>
-                <% } %>
+                <div class="col-2 offset-1 ">
+                    <div class="row no-gutters">
+                        <% if (socialMenu.length) { %>
+                        <div class="col-auto">
+                            <ul class="social-menu nav justify-content-center">
+                                <% socialMenu.forEach((social) => { %>
+                                <li class="nav-item px-2">
+                                    <a class="nav-link p-0" href="<%- social.url %>" target="_blank">
+                                        <span class="fa <%- social.classes.join(' ') %>"></span>
+                                    </a>
+                                </li>
+                                <% }); %>
+                            </ul>
+                        </div>
+                        <% } %>
 
-                <div class="col-8">
+                        <% if (languagesMenu.length) { %>
+                        <div class="col-auto">
+                             <ul class="languages-menu nav justify-content-center align-items-start">
+                                <% languagesMenu.forEach((lang) => { %>
+                                <li class="nav-item px-2">
+                                    <a class="nav-link p-0" href="<%- lang.url %>" title="<%- lang.name %>"><%- lang.slug %></a>
+                                </li>
+                                <% }); %>
+                            </ul>       
+                        </div>
+                        <% } %>
+                    </div>
+                </div>
+
+                <div class="col-6">
                     <div class="main-menu">
                         <div class="wrapper">
                             <ul class="navbar-nav mr-auto">
@@ -76,17 +96,6 @@ define(['require', 'jquery', 'ejs', 'data/main-menu-desktop', 'data/social-menu'
                         </div>
                     </div>
                 </div>
-                <% if (socialMenu.length) { %>
-                <ul class="social-menu col-1 nav justify-content-center">
-                    <% socialMenu.forEach((social) => { %>
-                    <li class="nav-item px-2">
-                        <a class="nav-link p-0" href="<%- social.url %>" target="_blank">
-                            <span class="fa <%- social.classes.join(' ') %>"></span>
-                        </a>
-                    </li>
-                    <% }); %>
-                </ul>
-                <% } %>
             </div>
         </nav>`;
 

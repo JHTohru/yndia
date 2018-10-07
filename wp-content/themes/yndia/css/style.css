@@ -664,7 +664,7 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
       #manifesto .manifesto-text-content, #manifesto .manifesto-text-content h2, #manifesto .manifesto-text-content h6 {
         text-align: left; }
       #manifesto .manifesto-text-content .scroll-auto {
-        max-height: 40vh; } }
+        max-height: 30vh; } }
 #manifesto .carousel-control-prev {
   left: -1.5rem;
   color: #1f4656; }
@@ -740,12 +740,7 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
   overflow: hidden;
   height: 80vh; }
 #slow-carbonation-carousel .slow-carbonation-element-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 45vh; }
-  #slow-carbonation-carousel .slow-carbonation-element-image img {
-    max-height: 100%; }
 #slow-carbonation-carousel .slow-carbonation-element-text {
   padding-top: 2vh;
   height: 35vh; }
@@ -770,14 +765,16 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
     #slow-carbonation-factory a.factory-part.active, #slow-carbonation-factory a.factory-part:hover {
       opacity: 1; }
 
-#hand, #accordion-fish {
+#hand, #accordion-fish,
+#mobile-hand, #mobile-accordion-fish {
   animation: slowCarbonationAnimation 1.5s steps(24) infinite;
   background-color: transparent;
   background-position: 2400% 50%;
   background-repeat: repeat-x;
   background-size: 2400% auto; }
 
-#balloon, #snail {
+#balloon, #snail,
+#mobile-balloon, #mobile-snail {
   animation: slowCarbonationAnimation 3s steps(48) infinite;
   background-color: transparent;
   background-position: 4800% 50%;
@@ -787,34 +784,58 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
 @keyframes slowCarbonationAnimation {
   100% {
     background-position-x: 0; } }
+#snail, #mobile-snail {
+  background-image: url("./../images/slow-carbonation-animation/snail-animation-filmstrip-min.png"); }
+
+#hand, #mobile-hand {
+  animation-direction: alternate;
+  background-image: url("./../images/slow-carbonation-animation/oil-bottle-animation-filmstrip-min.png"); }
+
+#balloon, #mobile-balloon {
+  background-image: url("./../images/slow-carbonation-animation/balloon-animation-filmstrip-min.png"); }
+
+#accordion-fish, #mobile-accordion-fish {
+  background-image: url("./../images/slow-carbonation-animation/hand-fish-animation-filmstrip-min.png"); }
+
 #snail {
-  background-image: url("./../images/slow-carbonation-animation/snail-animation-filmstrip-min.png");
   height: 92%;
   left: -7%;
   top: -42%;
   width: 24vh; }
 
 #hand {
-  animation-direction: alternate;
-  background-image: url("./../images/slow-carbonation-animation/oil-bottle-animation-filmstrip-min.png");
   height: 50%;
   left: 16%;
   top: -24.4%;
   width: 31vh; }
 
 #balloon {
-  background-image: url("./../images/slow-carbonation-animation/balloon-animation-filmstrip-min.png");
   height: 84%;
   left: 49.5%;
   top: -27.3%;
   width: 15.5vh; }
 
 #accordion-fish {
-  background-image: url("./../images/slow-carbonation-animation/hand-fish-animation-filmstrip-min.png");
   height: 48%;
   left: -14%;
   top: 40%;
   width: 70.1vh; }
+
+#mobile-hand, #mobile-balloon, #mobile-snail, #mobile-accordion-fish {
+  height: 100%;
+  margin: 0 auto; }
+
+#mobile-hand {
+  width: 100%; }
+
+#mobile-balloon {
+  width: 46%; }
+
+#mobile-snail {
+  width: 66%; }
+
+#mobile-accordion-fish {
+  width: 161%; }
 
 #bubbles {
   right: 9.5%;
@@ -854,10 +875,10 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
   font-size: .8rem; }
   @media (min-width: 992px) {
     #slow-carbonation-info .text-content {
-      font-size: .9rem; } }
-  @media (min-width: 1200px) {
+      font-size: 17px; } }
+  @media (min-width: 1600px) {
     #slow-carbonation-info .text-content {
-      font-size: 1rem; } }
+      font-size: 19px; } }
   #slow-carbonation-info .text-content p:last-of-type {
     margin-bottom: 0; }
 @media (min-width: 1600px) {
@@ -994,8 +1015,8 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
       margin-bottom: 0; }
     @media (min-width: 768px) {
       #the-bottle .content {
-        margin-bottom: 27vh;
-        max-height: 32vh;
+        margin-bottom: 23vh;
+        max-height: 26vh;
         overflow-y: auto;
         width: 100%; }
         #the-bottle .content, #the-bottle .content h4 {
@@ -1004,7 +1025,7 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    height: 70vh;
+    height: 65vh;
     overflow: hidden;
     padding-bottom: 1rem; }
     #the-bottle .bottle img.extra-dry-label {
@@ -1023,27 +1044,26 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
       #the-bottle .bottle .label-element-link:hover {
         text-decoration: none; }
       #the-bottle .bottle .label-element-link.the-arrow {
-        left: 10%;
+        left: 5%;
         bottom: 40%;
-        width: 39%;
+        width: 44%;
         text-align: left; }
       #the-bottle .bottle .label-element-link.the-clouds {
-        right: 10%;
-        bottom: 36%;
-        width: 30%;
+        bottom: 35%;
+        right: 5%;
+        width: 34%;
         text-align: right; }
       #the-bottle .bottle .label-element-link.the-river {
-        right: 10%;
-        bottom: 28%;
-        width: 23%;
+        bottom: 23%;
+        right: 5%;
+        width: 44%;
         text-align: right; }
       @media (min-width: 768px) {
         #the-bottle .bottle .label-element-link {
           display: block; } }
     @media (min-width: 768px) {
       #the-bottle .bottle {
-        height: 70vh;
-        margin-bottom: -2vh;
+        margin-bottom: -10px;
         padding: 0; } }
   #the-bottle .sea {
     top: -7%;
@@ -1169,9 +1189,18 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
       background-color: #545454; }
 
 #desktop-label-elements {
-  height: 54vh;
   color: white;
+  height: 60vh;
   text-align: left; }
+  @media (min-width: 1600px) {
+    #desktop-label-elements {
+      height: 54vh; }
+      #desktop-label-elements .label-element-figures, #desktop-label-elements .label-element-text-content {
+        flex-basis: 50%;
+        max-width: 50%;
+        width: 50%; }
+      #desktop-label-elements .label-element-text-content {
+        padding-left: 1rem; } }
   #desktop-label-elements h6 {
     font-size: 1.5rem;
     text-align: left; }
@@ -1179,13 +1208,30 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 10vw;
-    height: 10vw;
-    background-color: #2c8a9a;
+    width: 65%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("./../images/the-bottle-element-classic-bg.svg");
+    margin-bottom: 10px;
+    min-height: 88px;
     transition: transform ease-in 200ms; }
     #desktop-label-elements figure img {
-      max-width: 85%;
-      max-height: 85%; }
+      max-width: 65%;
+      max-height: 65%; }
+    @media (min-width: 992px) {
+      #desktop-label-elements figure {
+        min-height: 136px; } }
+    @media (min-width: 1200px) {
+      #desktop-label-elements figure {
+        min-height: 170px; } }
+    @media (min-width: 1600px) {
+      #desktop-label-elements figure {
+        margin: 0;
+        width: 100%; }
+        #desktop-label-elements figure img {
+          max-width: 75%;
+          max-height: 75%; } }
   #desktop-label-elements .blowing-bubble {
     position: absolute;
     top: 0;
@@ -1199,7 +1245,7 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
   body.extra-dry-label #desktop-label-elements h6 {
     color: #545454; }
   body.extra-dry-label #desktop-label-elements figure {
-    background-color: #545454; }
+    background-image: url("./../images/the-bottle-element-extra-dry-bg.svg"); }
   body.extra-dry-label #desktop-label-elements .blowing-bubble {
     border-color: #545454; }
 
@@ -1234,6 +1280,8 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
     color: #1f4656; }
   .desktop-menu .languages-menu, .desktop-menu .social-menu {
     padding-top: 4vh; }
+    .desktop-menu .languages-menu a, .desktop-menu .social-menu a {
+      line-height: 1; }
   .desktop-menu .languages-menu .nav-item:not(:last-child) {
     border-right: 1px solid #1f4656; }
   .desktop-menu .languages-menu .nav-link {
@@ -1383,6 +1431,38 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
 
 #navigation-tutorial .navigation-tutorial-text {
   font-size: 1.3em; }
+
+#try-extra-dry {
+  cursor: pointer;
+  position: absolute;
+  right: -14rem;
+  top: 24vh;
+  transition: transform ease-in-out 200ms;
+  z-index: 110; }
+  @media (min-width: 1200px) {
+    #try-extra-dry {
+      right: -13rem; } }
+  #try-extra-dry.expanded, #try-extra-dry:hover {
+    transform: translateX(-14rem); }
+  #try-extra-dry .content {
+    background: #bb8b36;
+    border-radius: 8px 0 0 8px;
+    padding-right: 6.6rem; }
+    #try-extra-dry .content h2 {
+      font-size: 1.3rem;
+      line-height: 1.25; }
+      #try-extra-dry .content h2 a {
+        color: #1c4955; }
+        #try-extra-dry .content h2 a:hover {
+          text-decoration: none; }
+    #try-extra-dry .content p {
+      font-family: "Flama Condensed", sans-serif;
+      line-height: 1.1; }
+  #try-extra-dry .extra-dry-bottle {
+    position: absolute;
+    right: -0.6rem;
+    top: -3.7rem;
+    width: 8.8rem; }
 
 /*
 .pace {

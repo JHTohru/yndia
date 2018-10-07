@@ -85,7 +85,7 @@ define([
         }, });
 
     //
-    const $body = $('body')
+    const $body = $('body');
 
     const goToURL = require('common/navigation').goToURL;
     $body.prepend(mobileMenu, content)

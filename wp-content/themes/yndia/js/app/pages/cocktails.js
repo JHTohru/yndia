@@ -80,7 +80,7 @@ define(['require', 'jquery', 'ejs', 'data/cocktails', 'common/utils'], (require)
         const $cocktailTextContent = $cocktailsPage.find('#cocktail-text-content');
         const $cocktailImage = $cocktailsPage.find('#cocktail-image');
 
-        let activeCocktailIndex;
+        let activeCocktailIndex = 0;
 
         adjust$cocktailImageBGPosY = $image => $cocktailImage.css({
             backgroundPositionY() {
@@ -99,7 +99,8 @@ define(['require', 'jquery', 'ejs', 'data/cocktails', 'common/utils'], (require)
             .on('slide.bs.carousel', (event) => {
                 activeCocktailIndex = event.to;
 
-                $cocktailTextContent.collapse('hide');
+                $cocktailTextContent.trigger('refresh.content');
+
                 const $currentCocktailImage = $cocktailImage.children('img');
                 const $newCocktailImage =
                     $('<img>')
@@ -126,25 +127,44 @@ define(['require', 'jquery', 'ejs', 'data/cocktails', 'common/utils'], (require)
             });
 
         $cocktailTextContent
-            .on('hidden.bs.collapse', function() {
-                $(this).find('#cocktail-specifications')
-                    .html(cocktails[activeCocktailIndex].specifications);
+            .on('refresh.content', function() {
+                $(this).slideUp({
+                    always() {
+                        $(this).find('#cocktail-specifications')
+                            .html(cocktails[activeCocktailIndex].specifications);
 
-                $(this).find('#cocktail-ingredients')
-                    .removeClass('show')
-                    .addClass('hide')
-                    .html(cocktails[activeCocktailIndex].ingredients);
+                        $(this).find('#cocktail-ingredients')
+                            .removeClass('show')
+                            .addClass('hide')
+                            .html(cocktails[activeCocktailIndex].ingredients);
 
-                $(this).find('#cocktail-directions')
-                    .removeClass('show')
-                    .addClass('hide')
-                    .html(cocktails[activeCocktailIndex].directions);
+                        $(this).find('#cocktail-directions')
+                            .removeClass('show')
+                            .addClass('hide')
+                            .html(cocktails[activeCocktailIndex].directions);
 
-                $(this).collapse('show');
+                        $(this).slideDown(200);
+                    },
+                    duration: 200,
+                });
             });
 
-        //
-        $cocktailsPage.find('#cocktail-image img')
+        const onCollapse = () => window.matchMedia('(max-width: 767px)').matches;
+
+        $cocktailTextContent
+            .find('#cocktail-specifications')
+            .on('hidden.bs.collapse show.bs.collapse', onCollapse);
+
+        $cocktailTextContent
+            .find('#cocktail-ingredients')
+            .on('hidden.bs.collapse show.bs.collapse', onCollapse);
+
+        $cocktailTextContent
+            .find('#cocktail-directions')
+            .on('hidden.bs.collapse show.bs.collapse', onCollapse);
+
+        $cocktailsPage
+            .find('#cocktail-image img')
             .on({
                 load() {
                     const interval = setInterval(() => {
