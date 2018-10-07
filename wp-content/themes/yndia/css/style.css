@@ -1280,8 +1280,6 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
     color: #1f4656; }
   .desktop-menu .languages-menu, .desktop-menu .social-menu {
     padding-top: 4vh; }
-    .desktop-menu .languages-menu a, .desktop-menu .social-menu a {
-      line-height: 1; }
   .desktop-menu .languages-menu .nav-item:not(:last-child) {
     border-right: 1px solid #1f4656; }
   .desktop-menu .languages-menu .nav-link {
@@ -1289,6 +1287,8 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
     font-weight: bold; }
   .desktop-menu .social-menu {
     font-size: 1.5rem; }
+    .desktop-menu .social-menu .nav-item {
+      line-height: 1; }
   .desktop-menu .main-menu {
     width: 100%;
     height: 22vh; }
@@ -1450,11 +1450,8 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
     padding-right: 6.6rem; }
     #try-extra-dry .content h2 {
       font-size: 1.3rem;
-      line-height: 1.25; }
-      #try-extra-dry .content h2 a {
-        color: #1c4955; }
-        #try-extra-dry .content h2 a:hover {
-          text-decoration: none; }
+      line-height: 1.25;
+      color: #1c4955; }
     #try-extra-dry .content p {
       font-family: "Flama Condensed", sans-serif;
       line-height: 1.1; }

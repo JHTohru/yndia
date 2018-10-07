@@ -1944,10 +1944,6 @@ $slowCarbAnimationPath: '#{$imagesPath}/slow-carbonation-animation';
 
   .languages-menu, .social-menu {
     padding-top: 4vh;
-
-    a {
-      line-height: 1;
-    }
   }
 
   .languages-menu {
@@ -1963,6 +1959,10 @@ $slowCarbAnimationPath: '#{$imagesPath}/slow-carbonation-animation';
 
   .social-menu {
     font-size: 1.5rem;
+
+    .nav-item {
+      line-height: 1;
+    }
   }
 
   .main-menu{
@@ -2170,14 +2170,7 @@ $slowCarbAnimationPath: '#{$imagesPath}/slow-carbonation-animation';
     h2 {
       font-size: 1.3rem;
       line-height: 1.25;
-
-      a {
-        color: #1c4955;
-
-        &:hover {
-          text-decoration: none;
-        }
-      }
+      color: #1c4955;
     }
 
     p {

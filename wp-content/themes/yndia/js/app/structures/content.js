@@ -12,10 +12,10 @@ define(['require', 'jquery', 'ejs', 'structures/desktop-menu', 'i18n/i18n'], (re
             id="try-extra-dry">
                 <div class="content row no-gutters py-2 pl-3">
                     <div class="col-auto mr-3">
-                        <h2 class="text-left m-0"><a href="#">Apenas 28<br>calorias</a></h2>
+                        <h2 class="text-left m-0"><%- tryExtraDryTitle %></h2>
                     </div>
                     <div class="col-auto">
-                        <p class="m-0 text-white text-left">Conheça também<br>a versão Extra Dry.<br>Clique aqui e saiba mais.</p>
+                        <p class="m-0 text-white text-left"><%- tryExtraDryText %></p>
                     </div>
                 </div>
             
@@ -76,10 +76,14 @@ define(['require', 'jquery', 'ejs', 'structures/desktop-menu', 'i18n/i18n'], (re
     // Renderização da página
     const i18n = require('i18n/i18n');
     const tutorialText = i18n[currentLanguage]['navigation-tutorial'];
+    const tryExtraDryTitle = i18n[currentLanguage]['try-extra-dry-title'];
+    const tryExtraDryText = i18n[currentLanguage]['try-extra-dry-text'];
     const img = require('common/utils').img;
     const contentTemplateData = {
-        tutorialText,
         img,
+        tryExtraDryText,
+        tryExtraDryTitle,
+        tutorialText,
     };
     const contentTemplateOptions = {};
     const contentHTML = ejs.render(contentTemplate, contentTemplateData, contentTemplateOptions);
