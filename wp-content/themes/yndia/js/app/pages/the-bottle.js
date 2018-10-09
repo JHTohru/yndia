@@ -377,7 +377,7 @@ define(['require', 'jquery', 'plugins/sea-flow', 'ejs', 'data/bottle-labels', 'd
                 </div>
                 <% } %>
                 <% if (bottleLabels.length) { %>
-                <div class="bottle col-12 col-md-5 position-relative">
+                <div class="bottle col-12 col-md-4 position-relative">
                     <div class="bottle-wrapper d-flex justify-content-center">
                         <% if (labelElements.length) { labelElements.forEach((labelElement) => { %>
                         <a href="#<%- labelElement.id %>" data-label-element-id="<%- labelElement.id %>" class="label-element-link <%- labelElement.id %>">
@@ -393,15 +393,15 @@ define(['require', 'jquery', 'plugins/sea-flow', 'ejs', 'data/bottle-labels', 'd
                 </div>
                 <% } %>
                 <% if (labelElements.length) { %>
-                <div id="desktop-label-elements" class="col-md-3 d-none d-md-block">
+                <div id="desktop-label-elements" class="col-md-4 d-none d-md-block">
                     <div class="row no-gutters">
-                        <div class="col-12 label-element-figures">
+                        <div class="col-6 label-element-figures pr-2">
                             <figure class="label-element-figure rounded-circle">
                                 <img class="classic-label" src="<%- activeLabelElement.classicImage %>">
                                 <img class="extra-dry-label" src="<%- activeLabelElement.extraDryImage %>">
                             </figure>
                         </div>
-                        <div class="col-12 label-element-text-content">
+                        <div class="col-6 label-element-text-content">
                             <h6 class="label-element-title"><%- activeLabelElement.title %></h6>
                             <div class="label-element-content"><%- activeLabelElement.content %></div>
                         </div>

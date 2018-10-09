@@ -160,6 +160,12 @@ define([
                 return next();
             });
 
+            beforeTransition.add((next) => {
+                $frame.css('transform', 'translateY(0)');
+
+                return next();
+            });
+
             if (newURL === '#manifesto') {
                 beforeTransition.add((next) => {
                     if ($('#manifesto-carousel').find('.carousel-item.active').is(':first-of-type')) {

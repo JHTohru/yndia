@@ -990,7 +990,7 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
     --nav-btn-primary-color: #1f8394;
     --nav-btn-secondary-color: #e8e8e8;
     position: absolute;
-    left: calc(50vw - var(--nav-btn-size) / 2);
+    left: calc(50% - var(--nav-btn-size) / 2);
     bottom: 70vh;
     z-index: 100;
     display: none; }
@@ -1026,8 +1026,16 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
     justify-content: center;
     align-items: flex-end;
     height: 65vh;
+    margin-bottom: -51px;
     overflow: hidden;
     padding-bottom: 1rem; }
+    @media (min-width: 768px) {
+      #the-bottle .bottle {
+        margin-bottom: -10px;
+        padding: 0; } }
+    @media (min-width: 1200px) {
+      #the-bottle .bottle {
+        margin-bottom: 0px; } }
     #the-bottle .bottle img.extra-dry-label {
       display: none; }
     #the-bottle .bottle .bottle-wrapper {
@@ -1061,10 +1069,6 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
       @media (min-width: 768px) {
         #the-bottle .bottle .label-element-link {
           display: block; } }
-    @media (min-width: 768px) {
-      #the-bottle .bottle {
-        margin-bottom: -10px;
-        padding: 0; } }
   #the-bottle .sea {
     top: -7%;
     left: 0; }
@@ -1194,13 +1198,7 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
   text-align: left; }
   @media (min-width: 1600px) {
     #desktop-label-elements {
-      height: 54vh; }
-      #desktop-label-elements .label-element-figures, #desktop-label-elements .label-element-text-content {
-        flex-basis: 50%;
-        max-width: 50%;
-        width: 50%; }
-      #desktop-label-elements .label-element-text-content {
-        padding-left: 1rem; } }
+      height: 54vh; } }
   #desktop-label-elements h6 {
     font-size: 1.5rem;
     text-align: left; }
@@ -1208,30 +1206,23 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 65%;
+    width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     background-image: url("./../images/the-bottle-element-classic-bg.svg");
-    margin-bottom: 10px;
+    margin-bottom: 0;
     min-height: 88px;
     transition: transform ease-in 200ms; }
     #desktop-label-elements figure img {
-      max-width: 65%;
-      max-height: 65%; }
+      max-width: 75%;
+      max-height: 75%; }
     @media (min-width: 992px) {
       #desktop-label-elements figure {
         min-height: 136px; } }
     @media (min-width: 1200px) {
       #desktop-label-elements figure {
         min-height: 170px; } }
-    @media (min-width: 1600px) {
-      #desktop-label-elements figure {
-        margin: 0;
-        width: 100%; }
-        #desktop-label-elements figure img {
-          max-width: 75%;
-          max-height: 75%; } }
   #desktop-label-elements .blowing-bubble {
     position: absolute;
     top: 0;
@@ -1444,12 +1435,24 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
   @media (min-width: 1200px) {
     #try-extra-dry {
       right: -14.6rem; } }
+  @media (min-width: 1600px) {
+    #try-extra-dry {
+      right: -15.6rem; } }
   #try-extra-dry.expanded, #try-extra-dry:hover {
     transform: translateX(-14rem); }
+    @media (min-width: 1200px) {
+      #try-extra-dry.expanded, #try-extra-dry:hover {
+        transform: translateX(-14.6rem); } }
+    @media (min-width: 1600px) {
+      #try-extra-dry.expanded, #try-extra-dry:hover {
+        transform: translateX(-15.6rem); } }
   #try-extra-dry .content {
     background: #bb8b36;
     border-radius: 8px 0 0 8px;
     padding-right: 6.6rem; }
+    @media (min-width: 1600px) {
+      #try-extra-dry .content {
+        padding-right: 7.6rem; } }
     #try-extra-dry .content h2 {
       font-size: 1.3rem;
       line-height: 1.25;
@@ -1462,6 +1465,10 @@ body.active-page-the-bottle.extra-dry-label #mobile-menu-toggler {
     right: -0.6rem;
     top: -3.7rem;
     width: 8.8rem; }
+    @media (min-width: 1600px) {
+      #try-extra-dry .extra-dry-bottle {
+        right: 0rem;
+        top: -4.7rem; } }
 
 /*
 .pace {
