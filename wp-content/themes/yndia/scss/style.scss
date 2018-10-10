@@ -2161,6 +2161,14 @@ $slowCarbAnimationPath: '#{$imagesPath}/slow-carbonation-animation';
     right: -15.6rem;
   }
 
+  body.current-language-it & {
+    right: -15.6rem;
+
+    @include media-xxl {
+      right: -16.6rem;
+    }
+  }
+
   &.expanded, &:hover {
     transform: translateX(-14rem);
 
