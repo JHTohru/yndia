@@ -41,16 +41,16 @@ require(['jquery', 'popper'], ($, popper) => {
     const apiURL = `${siteUrl}/wp-json/wp/v2`;
 
     $.when(
-        $.getJSON(Object.assign(defaultRequestOptions, { url: `${apiURL}/menus/main-menu-desktop` })),
-        $.getJSON(Object.assign(defaultRequestOptions, { url: `${apiURL}/menus/main-menu-mobile` })),
-        $.getJSON(Object.assign(defaultRequestOptions, { url: `${apiURL}/menus/social-menu` })),
+        $.getJSON(Object.assign({}, defaultRequestOptions, { url: `${apiURL}/menus/main-menu-desktop` })),
+        $.getJSON(Object.assign({}, defaultRequestOptions, { url: `${apiURL}/menus/main-menu-mobile` })),
+        $.getJSON(Object.assign({}, defaultRequestOptions, { url: `${apiURL}/menus/social-menu` })),
         $.getJSON({ type: 'get', url: `${apiURL}/menus/languages-menu` }),
-        $.getJSON(Object.assign(defaultRequestOptions, { url: `${apiURL}/label-elements` })),
-        $.getJSON(Object.assign(defaultRequestOptions, { url: `${apiURL}/retailers` })),
-        $.getJSON(Object.assign(defaultRequestOptions, { url: `${apiURL}/carbonation-elements`, data: { order: 'desc' }, })),
-        $.getJSON(Object.assign(defaultRequestOptions, { url : `${apiURL}/manifestos` })),
-        $.getJSON(Object.assign(defaultRequestOptions, { url: `${apiURL}/bottle-labels` })),
-        $.getJSON(Object.assign(defaultRequestOptions, { url: `${apiURL}/cocktails` })),
+        $.getJSON(Object.assign({}, defaultRequestOptions, { url: `${apiURL}/label-elements` })),
+        $.getJSON(Object.assign({}, defaultRequestOptions, { url: `${apiURL}/retailers` })),
+        $.getJSON(Object.assign({}, defaultRequestOptions, { url: `${apiURL}/carbonation-elements`, data: { order: 'desc' }, })),
+        $.getJSON(Object.assign({}, defaultRequestOptions, { url : `${apiURL}/manifestos` })),
+        $.getJSON(Object.assign({}, defaultRequestOptions, { url: `${apiURL}/bottle-labels` })),
+        $.getJSON(Object.assign({}, defaultRequestOptions, { url: `${apiURL}/cocktails` })),
         $.ajax(`${baseUrl}/css/style.css`),
     ).then((
         mainMenuDesktopRes,
