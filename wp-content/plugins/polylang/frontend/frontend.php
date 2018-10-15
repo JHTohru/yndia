@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Frontend controller
+ * frontend controller
  * accessible as $polylang global object
  *
- * Properties:
+ * properties:
  * options          => inherited, reference to Polylang options array
  * model            => inherited, reference to PLL_Model object
  * links_model      => inherited, reference to PLL_Links_Model object
@@ -25,7 +25,7 @@ class PLL_Frontend extends PLL_Base {
 	public $links, $choose_lang, $filters, $filters_search, $nav_menu, $auto_translate;
 
 	/**
-	 * Constructor
+	 * constructor
 	 *
 	 * @since 1.2
 	 *
@@ -36,54 +36,48 @@ class PLL_Frontend extends PLL_Base {
 
 		add_action( 'pll_language_defined', array( $this, 'pll_language_defined' ), 1 );
 
-		// Avoids the language being the queried object when querying multiple taxonomies
+		// avoids the language being the queried object when querying multiple taxonomies
 		add_action( 'parse_tax_query', array( $this, 'parse_tax_query' ), 1 );
 
-		// Filters posts by language
+		// filters posts by language
 		add_action( 'parse_query', array( $this, 'parse_query' ), 6 );
 
-		// Not before 'check_canonical_url'
+		// not before 'check_canonical_url'
 		if ( ! defined( 'PLL_AUTO_TRANSLATE' ) || PLL_AUTO_TRANSLATE ) {
 			add_action( 'template_redirect', array( $this, 'auto_translate' ), 7 );
 		}
 	}
 
 	/**
-	 * Setups the language chooser based on options
+	 * setups the language chooser based on options
 	 *
 	 * @since 1.2
 	 */
 	public function init() {
 		$this->links = new PLL_Frontend_Links( $this );
 
-		// Don't set any language for REST requests
-		if ( 0 === strpos( str_replace( 'index.php', '', $_SERVER['REQUEST_URI'] ), '/' . rest_get_url_prefix() . '/' ) ) {
-			/** This action is documented in include/class-polylang.php */
-			do_action( 'pll_no_language_defined' );
-		} else {
-			// Static front page and page for posts
-			if ( 'page' === get_option( 'show_on_front' ) ) {
-				$this->static_pages = new PLL_Frontend_Static_Pages( $this );
-			}
-
-			// Setup the language chooser
-			$c = array( 'Content', 'Url', 'Url', 'Domain' );
-			$class = 'PLL_Choose_Lang_' . $c[ $this->options['force_lang'] ];
-			$this->choose_lang = new $class( $this );
-			$this->choose_lang->init();
-
-			// Need to load nav menu class early to correctly define the locations in the customizer when the language is set from the content
-			$this->nav_menu = new PLL_Frontend_Nav_Menu( $this );
+		// Static front page and page for posts
+		if ( 'page' === get_option( 'show_on_front' ) ) {
+			$this->static_pages = new PLL_Frontend_Static_Pages( $this );
 		}
+
+		// setup the language chooser
+		$c = array( 'Content', 'Url', 'Url', 'Domain' );
+		$class = 'PLL_Choose_Lang_' . $c[ $this->options['force_lang'] ];
+		$this->choose_lang = new $class( $this );
+		$this->choose_lang->init();
+
+		// need to load nav menu class early to correctly define the locations in the customizer when the language is set from the content
+		$this->nav_menu = new PLL_Frontend_Nav_Menu( $this );
 	}
 
 	/**
-	 * Setups filters and nav menus once the language has been defined
+	 * setups filters and nav menus once the language has been defined
 	 *
 	 * @since 1.2
 	 */
 	public function pll_language_defined() {
-		// Filters
+		// filters
 		$this->filters_links = new PLL_Frontend_Filters_Links( $this );
 		$this->filters = new PLL_Frontend_Filters( $this );
 		$this->filters_search = new PLL_Frontend_Filters_Search( $this );
@@ -95,7 +89,7 @@ class PLL_Frontend extends PLL_Base {
 	}
 
 	/**
-	 * When querying multiple taxonomies, makes sure that the language is not the queried object
+	 * when querying multiple taxonomies, makes sure that the language is not the queried object
 	 *
 	 * @since 1.8
 	 *
@@ -111,7 +105,7 @@ class PLL_Frontend extends PLL_Base {
 	}
 
 	/**
-	 * mMdifies some query vars to "hide" that the language is a taxonomy and avoid conflicts
+	 * modifies some query vars to "hide" that the language is a taxonomy and avoid conflicts
 	 *
 	 * @since 1.2
 	 *
@@ -127,24 +121,24 @@ class PLL_Frontend extends PLL_Base {
 			$pll_query->filter_query( $this->curlang );
 		}
 
-		// Modifies query vars when the language is queried
+		// modifies query vars when the language is queried
 		if ( ! empty( $qv['lang'] ) || ( ! empty( $taxonomies ) && array( 'language' ) == array_values( $taxonomies ) ) ) {
-			// Do we query a custom taxonomy?
+			// do we query a custom taxonomy?
 			$taxonomies = array_diff( $taxonomies, array( 'language', 'category', 'post_tag' ) );
 
-			// Remove pages query when the language is set unless we do a search
-			// Take care not to break the single page, attachment and taxonomies queries!
+			// remove pages query when the language is set unless we do a search
+			// take care not to break the single page, attachment and taxonomies queries!
 			if ( empty( $qv['post_type'] ) && ! $query->is_search && ! $query->is_page && ! $query->is_attachment && empty( $taxonomies ) ) {
 				$query->set( 'post_type', 'post' );
 			}
 
-			// Unset the is_archive flag for language pages to prevent loading the archive template
-			// Keep archive flag for comment feed otherwise the language filter does not work
+			// unset the is_archive flag for language pages to prevent loading the archive template
+			// keep archive flag for comment feed otherwise the language filter does not work
 			if ( empty( $taxonomies ) && ! $query->is_comment_feed && ! $query->is_post_type_archive && ! $query->is_date && ! $query->is_author && ! $query->is_category && ! $query->is_tag ) {
 				$query->is_archive = false;
 			}
 
-			// Unset the is_tax flag except if another custom tax is queried
+			// unset the is_tax flag except if another custom tax is queried
 			if ( empty( $taxonomies ) && ( $query->is_category || $query->is_tag || $query->is_author || $query->is_post_type_archive || $query->is_date || $query->is_search || $query->is_feed ) ) {
 				$query->is_tax = false;
 				unset( $query->queried_object ); // FIXME useless?
@@ -153,7 +147,7 @@ class PLL_Frontend extends PLL_Base {
 	}
 
 	/**
-	 * Auto translate posts and terms ids
+	 * auto translate posts and terms ids
 	 *
 	 * @since 1.2
 	 */
@@ -162,8 +156,8 @@ class PLL_Frontend extends PLL_Base {
 	}
 
 	/**
-	 * Resets some variables when switching blog
-	 * Overrides parent method
+	 * resets some variables when switching blog
+	 * overrides parent method
 	 *
 	 * @since 1.5.1
 	 *
@@ -171,11 +165,11 @@ class PLL_Frontend extends PLL_Base {
 	 * @param int $old_blog
 	 */
 	public function switch_blog( $new_blog, $old_blog ) {
-		// Need to check that some languages are defined when user is logged in, has several blogs, some without any languages
+		// need to check that some languages are defined when user is logged in, has several blogs, some without any languages
 		if ( parent::switch_blog( $new_blog, $old_blog ) && did_action( 'pll_language_defined' ) && $this->model->get_languages_list() ) {
 			static $restore_curlang;
 			if ( empty( $restore_curlang ) ) {
-				$restore_curlang = $this->curlang->slug; // To always remember the current language through blogs
+				$restore_curlang = $this->curlang->slug; // to always remember the current language through blogs
 			}
 
 			$lang = $this->model->get_language( $restore_curlang );

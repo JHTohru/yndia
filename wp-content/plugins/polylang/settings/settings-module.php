@@ -9,7 +9,7 @@ class PLL_Settings_Module {
 	public $active_option, $configure;
 	public $module, $title, $description;
 	public $options;
-	protected $action_links, $buttons, $form = false;
+	protected $action_links, $buttons;
 
 	/**
 	 * Constructor
@@ -123,14 +123,16 @@ class PLL_Settings_Module {
 	 * @return string
 	 */
 	public function get_form() {
+		static $form = false;
+
 		// Read the form only once
-		if ( false === $this->form ) {
+		if ( false === $form ) {
 			ob_start();
 			$this->form();
-			$this->form = ob_get_clean();
+			$form = ob_get_clean();
 		}
 
-		return $this->form;
+		return $form;
 	}
 
 	/**
