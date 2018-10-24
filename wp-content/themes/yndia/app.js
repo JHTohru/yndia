@@ -47,7 +47,7 @@ require(['jquery', 'popper'], ($, popper) => {
         $.getJSON({ type: 'get', url: `${apiURL}/menus/languages-menu` }),
         $.getJSON(Object.assign({}, defaultRequestOptions, { url: `${apiURL}/label-elements` })),
         $.getJSON(Object.assign({}, defaultRequestOptions, { url: `${apiURL}/retailers` })),
-        $.getJSON(Object.assign({}, defaultRequestOptions, { url: `${apiURL}/carbonation-elements`, data: { order: 'desc' }, })),
+        $.getJSON(Object.assign({}, defaultRequestOptions, { url: `${apiURL}/carbonation-elements`, data: { ...defaultRequestOptions.data, order: 'desc' }, })),
         $.getJSON(Object.assign({}, defaultRequestOptions, { url : `${apiURL}/manifestos` })),
         $.getJSON(Object.assign({}, defaultRequestOptions, { url: `${apiURL}/bottle-labels` })),
         $.getJSON(Object.assign({}, defaultRequestOptions, { url: `${apiURL}/cocktails` })),

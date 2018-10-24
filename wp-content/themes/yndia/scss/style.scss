@@ -1482,11 +1482,11 @@ $slowCarbAnimationPath: '#{$imagesPath}/slow-carbonation-animation';
     }
 
     a {
-      color: $mediumBlue;
+      color: white;
     }
 
     .classic-label a {
-      color: white;
+      color: $mediumBlue;
     }
 
     @include media-md {
@@ -1652,11 +1652,11 @@ $slowCarbAnimationPath: '#{$imagesPath}/slow-carbonation-animation';
 
     .framed-title {
       a {
-        color: $darkerGray;
+        color: white;
       }
 
       .extra-dry-label a {
-        color: white;
+        color: $darkerGray;
       }
     }
 

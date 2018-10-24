@@ -50,12 +50,12 @@ define(['require', 'jquery', 'ejs', 'data/carbonation-elements', 'common/utils']
                                 <div id="bubbles" class="factory-part"></div>
                                 <a id="accordion-fish" class="factory-part active"></a>
                                 <div id="pipes" class="factory-part"></div>
-                            </div>                        
+                            </div>             
                         </div>
 
                         <div class="col-3">
                             <h2 class="text-left mb-3 mb-xl-4">
-                                <span>Carbo&#8203;natação Lenta</span>
+                                <span><%- i18n[currentLanguage]['slow-carbonation-title'] %></span>
                             </h2>
                             <div id="slow-carbonation-info">
                                 <% if (carbonationElements.length) { %>
@@ -71,11 +71,13 @@ define(['require', 'jquery', 'ejs', 'data/carbonation-elements', 'common/utils']
             </section>`;
 
         // Renderização da página
+        const i18n = require('i18n/i18n');
         const loadIMG = require('common/utils').loadIMG;
 
         const slowCarbonationPageTemplateData = {
             carbonationElements,
             activeCarbonationElement,
+            i18n,
             loadIMG,
         };
         const slowCarbonationPageTemplateOptions = {};
